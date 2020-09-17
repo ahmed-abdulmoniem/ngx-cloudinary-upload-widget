@@ -1,19 +1,17 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { NgxCloudinaryWidgetPluginComponent } from './ngx-cloudinary-widget-plugin.component';
 import { CloudinaryWidgetManager } from './cloudinary-widget-manager';
 
 
 
 @NgModule({
-  declarations: [NgxCloudinaryWidgetPluginComponent],
   imports: [
   ],
-  exports: [NgxCloudinaryWidgetPluginComponent]
+  exports: []
 })
-export class NgxCloudinaryWidgetPluginModule {
-  static forRoot(): ModuleWithProviders<NgxCloudinaryWidgetPluginModule> {
+export class NgxCloudinaryWidgetModule {
+  static forRoot(): ModuleWithProviders<NgxCloudinaryWidgetModule> {
     return {
-      ngModule: NgxCloudinaryWidgetPluginModule,
+      ngModule: NgxCloudinaryWidgetModule,
       providers: [
         CloudinaryWidgetManager,
       ]

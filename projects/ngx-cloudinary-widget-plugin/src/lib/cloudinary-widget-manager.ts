@@ -10,7 +10,6 @@ export class CloudinaryWidgetManager {
   widget: IWidget;
   subject = new Subject();
   constructor() {
-    console.log(cloudinary);
   }
 
   private createUploadWidget(config: IOption): Observable<any> {
@@ -18,8 +17,6 @@ export class CloudinaryWidgetManager {
       this.widget = cloudinary.createUploadWidget(
         config,
         (error, result) => {
-          console.log(error);
-          console.log(result);
           if (error) {
             observer.error(error);
           } else {

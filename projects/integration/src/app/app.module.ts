@@ -2,14 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxCloudinaryWidgetPluginModule } from 'ngx-cloudinary-widget-plugin';
+import { NgxCloudinaryWidgetModule } from 'ngx-cloudinary-widget-plugin';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    NgxCloudinaryWidgetPluginModule.forRoot()
+    NgxCloudinaryWidgetModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

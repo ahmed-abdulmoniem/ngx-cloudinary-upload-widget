@@ -1,27 +1,74 @@
-# CloudinaryWidgetPlugin
+# ngx-Cloudinary-Upload-widget
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+<p align="center">
+  <a href="https://twitter.com/__bangash"><img src="https://img.shields.io/twitter/follow/__bangash.svg?label=Follow"/></a>
+</p>
 
-## Development server
+This plugin is created a wrapper around on [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Reasons to Use This Plugin
 
-## Code scaffolding
+It will help you to use Plugin like Angular service.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Run the following code in your terminal:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+yarn add ngx-cloudinary-upload-widget
+```
 
-## Running unit tests
+or if you are using npm:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install ngx-cloudinary-upload-widget
+```
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Setup Before Initial Use
 
-## Further help
+Import `NgxCloudinaryWidgetModule` into your root module like:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```TS
+import { NgxLoadingPluginModule } from 'ngx-cloudinary-upload-widget';
+
+@NgModule({
+  imports: [
+    NgxCloudinaryWidgetModule.forRoot(
+        {
+            cloudName:"cloudinary_name"
+        }
+    )
+  ]
+})
+export class AppModule {}
+```
+
+```HTML
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+```
+
+put the above script in intex.html
+
+```TS
+import { CloudinaryWidgetManager } from 'ngx-cloudinary-widget-plugin';
+
+constructor(private manager: CloudinaryWidgetManager) {}
+
+ onOpenDialog(): void {
+    this.manager.open().subscribe((result) => {
+      console.log(result);
+    }, (error) => {
+      console.log(err);
+    }, () => {
+      console.log('complete');
+    });
+  }
+```
+
+### License and copy right
+
+&copy; Shahid Ahmad
+
+License under the [MIT License](LICENSE).
