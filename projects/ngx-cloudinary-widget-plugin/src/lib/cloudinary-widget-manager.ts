@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { EEvent } from './constaint';
+import { EEvent, ProviderNames } from './constaint';
 import { ICloudinary, IOption, IWidget } from './interfaces';
 declare var cloudinary: ICloudinary;
 @Injectable({
@@ -9,7 +9,7 @@ declare var cloudinary: ICloudinary;
 export class CloudinaryWidgetManager {
   widget: IWidget;
   subject = new Subject();
-  constructor() {
+  constructor(@Inject(ProviderNames.CLOUDINARY_WIDGET) private config: IOption) {
   }
 
   private createUploadWidget(config: IOption): Observable<any> {
@@ -31,10 +31,10 @@ export class CloudinaryWidgetManager {
     });
   }
 
-  open(): Observable<any> {
+  open(option: IOption): Observable<any> {
     return this.createUploadWidget({
-      cloudName: 'smsami-uat',
-      uploadPreset: 'p3cq3brm'
+      cloudName: (option && option.cloudName) || (this.config.cloudName),
+      uploadPreset: option.uploadPreset,
     });
   }
 }

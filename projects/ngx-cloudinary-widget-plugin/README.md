@@ -56,11 +56,11 @@ import { CloudinaryWidgetManager } from 'ngx-cloudinary-widget-plugin';
 
 constructor(private manager: CloudinaryWidgetManager) {}
 
- onOpenDialog(): void {
-    this.manager.open().subscribe((result) => {
-      console.log(result);
-    }, (error) => {
-      console.log(err);
+  onOpen(): void {
+    this.manager.open({ uploadPreset:'preset' }).subscribe((resp) => {
+      console.log(resp);
+    }, (err) => {
+      console.log('err', err);
     }, () => {
       console.log('complete');
     });

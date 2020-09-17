@@ -9,7 +9,9 @@ import { NgxCloudinaryWidgetModule } from 'ngx-cloudinary-widget-plugin';
   ],
   imports: [
     BrowserModule,
-    NgxCloudinaryWidgetModule.forRoot()
+    NgxCloudinaryWidgetModule.forRoot({
+      cloudName: 'smsami-uat'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
