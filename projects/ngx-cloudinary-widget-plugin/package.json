@@ -1,6 +1,6 @@
 {
   "name": "ngx-cloudinary-upload-widget",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": ">=5.0.0",
@@ -9,7 +9,7 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "tags": [
+  "keywords": [
     "cloudinary",
     "upload-widget",
     "cloudinary-upload-widget",
