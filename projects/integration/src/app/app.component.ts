@@ -13,7 +13,7 @@ export class AppComponent {
   }
 
   onOpen(): void {
-    this.manager.open({ uploadPreset: 'p3cq3brm', cropping: true }).subscribe((resp) => {
+    this.manager.open({ autoMinimize: true, uploadPreset: 'p3cq3brm' }).subscribe((resp) => {
       console.log(resp);
     }, (err) => {
       console.log('err', err);

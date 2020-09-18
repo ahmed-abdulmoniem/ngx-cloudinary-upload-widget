@@ -2,7 +2,9 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { EEvent, ProviderNames } from './constaint';
 import { ICloudinary, IOption, IWidget } from './interfaces';
+
 declare var cloudinary: ICloudinary;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,9 +34,15 @@ export class CloudinaryWidgetManager {
   }
 
   open(option: Partial<IOption>): Observable<any> {
+    let config: Partial<IOption> = option as IOption;
+    if (typeof option === 'string') {
+      config = {
+        uploadPreset: option
+      };
+    }
     return this.createUploadWidget({
-      cloudName: (option && option.cloudName) || (this.config.cloudName),
-      ...option
+      cloudName: (config && config.cloudName) || (this.config.cloudName),
+      ...config
     });
   }
 }

@@ -1,5 +1,13 @@
 export interface IWidget {
     open: () => void;
+    close: (obj: { quiet: boolean }) => void;
+    update: (obj: IOption) => void;
+    hide: () => void;
+    show: () => void;
+    minimize: () => void;
+    isShowing: () => boolean;
+    isMinimized: () => boolean;
+
 }
 
 export interface ICloudinary {
@@ -25,8 +33,16 @@ export interface IOption {
     text?: any;
     encryption?: any;
     language?: string;
+    clientAllowedFormats?: string[];
+    maxFileSize?: number;
+    maxImageFileSize?: number;
+    maxVideoFileSize?: number;
+    maxRawFileSize?: number;
+    maxImageWidth?: number;
+    maxImageHeight?: number;
     preBatch?: (cb: (obj?: { cancel: boolean }) => void, data: any) => void;
     prepareUploadParams?: (cb: (obj?: { cancel: boolean }) => void, params: any) => void;
     getTags?: (cb: (obj?: { cancel: boolean }) => void, prefix: any) => void;
     getUploadPresets?: (cb: (presets?: string[]) => void) => void;
+    [prop: string]: any;
 }

@@ -4,4 +4,4 @@ export enum EEvent {
 
 export const ProviderNames = {
     CLOUDINARY_WIDGET: 'CLOUDINARY_WIDGET'
-}
+};
