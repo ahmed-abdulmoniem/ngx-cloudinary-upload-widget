@@ -31,10 +31,10 @@ export class CloudinaryWidgetManager {
     });
   }
 
-  open(option: IOption): Observable<any> {
+  open(option: Partial<IOption>): Observable<any> {
     return this.createUploadWidget({
       cloudName: (option && option.cloudName) || (this.config.cloudName),
-      uploadPreset: option.uploadPreset,
+      ...option
     });
   }
 }
