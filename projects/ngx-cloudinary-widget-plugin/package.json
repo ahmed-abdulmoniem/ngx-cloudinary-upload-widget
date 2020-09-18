@@ -1,6 +1,7 @@
 {
   "name": "ngx-cloudinary-upload-widget",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": ">=5.0.0",
     "@angular/core": ">=5.0.0"
@@ -17,5 +18,9 @@
   "author": {
     "email": "shahid.bangash@hotmail.com",
     "name": "Shahid ahmad"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/sa-bangash/ngx-cloudinary-upload-widget/issues"
+  },
+  "homepage": "https://github.com/sa-bangash/ngx-cloudinary-upload-widget/blob/master/README.md"
 }

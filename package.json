@@ -7,7 +7,7 @@
     "build": "ng build ngx-cloudinary-widget-plugin",
     "watch": "ng build ngx-cloudinary-widget-plugin --watch",
     "serve": "ng serve integration",
-    "prod-build": "ng build ngx-cloudinary-widget-plugin --watch --c=production",
+    "prod-build": "ng build ngx-cloudinary-widget-plugin --c=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
