@@ -20,7 +20,7 @@ export class CloudinaryWidgetManager {
         config,
         (error, result) => {
           if (error) {
-            observer.error(error);
+            observer.next(error);
           } else {
             observer.next(result);
             if (result.event === EEvent.close) {
