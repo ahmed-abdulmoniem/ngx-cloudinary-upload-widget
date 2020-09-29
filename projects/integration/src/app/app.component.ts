@@ -21,4 +21,14 @@ export class AppComponent {
       console.log('complete');
     });
   }
+
+  onComplete(): void {
+    this.manager.onComplete({ uploadPreset: 'p3cq3brm', clientAllowedFormats: ['docx'] }).subscribe((resp) => {
+      console.log(resp);
+    }, (err) => {
+      console.log('err', err);
+    }, () => {
+      console.log('complete');
+    });
+  }
 }
