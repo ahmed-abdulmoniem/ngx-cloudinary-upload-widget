@@ -67,6 +67,16 @@ constructor(private manager: CloudinaryWidgetManager) {}
   }
 ```
 
+if you want to give you complete array once dialog close this is function you need to subscribe
+
+```TS
+  this.manager.onClose({ uploadPreset: 'p3cq3brm' }).subscribe((resp) => {
+      console.log(resp);
+    });
+```
+
+onClose resturn obserable<any[]>, only fire on close event.
+
 ### License and copy right
 
 &copy; Shahid Ahmad

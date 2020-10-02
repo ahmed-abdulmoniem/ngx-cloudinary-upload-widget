@@ -13,8 +13,8 @@ export class AppComponent {
   }
 
   onOpen(): void {
-    this.manager.open({ uploadPreset: 'p3cq3brm', clientAllowedFormats: ['docx'] }).subscribe((resp) => {
-      console.log(resp);
+    const sub = this.manager.open({ uploadPreset: 'p3cq3brm', cropping: false }).subscribe((resp) => {
+      console.log('onOpen Called', resp);
     }, (err) => {
       console.log('err', err);
     }, () => {
@@ -23,8 +23,8 @@ export class AppComponent {
   }
 
   onComplete(): void {
-    this.manager.onComplete({ uploadPreset: 'p3cq3brm', clientAllowedFormats: ['docx'] }).subscribe((resp) => {
-      console.log(resp);
+    this.manager.onClose({ uploadPreset: 'p3cq3brm' }).subscribe((resp) => {
+      console.log('onclose Called', resp);
     }, (err) => {
       console.log('err', err);
     }, () => {
