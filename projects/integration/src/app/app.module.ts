@@ -12,7 +12,7 @@ import { NgxCloudinaryWidgetModule } from 'ngx-cloudinary-widget-plugin';
     NgxCloudinaryWidgetModule.forRoot({
       cloudName: 'smsami-uat',
       clientAllowedFormats: ['png'],
-      cropping: true
+      // cropping: true
     })
   ],
   providers: [],

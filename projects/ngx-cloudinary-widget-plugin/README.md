@@ -31,7 +31,7 @@ npm install ngx-cloudinary-upload-widget
 Import `NgxCloudinaryWidgetModule` into your root module like:
 
 ```TS
-import { NgxLoadingPluginModule } from 'ngx-cloudinary-upload-widget';
+import { NgxCloudinaryWidgetModule } from 'ngx-cloudinary-upload-widget';
 
 @NgModule({
   imports: [

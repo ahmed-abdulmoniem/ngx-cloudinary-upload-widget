@@ -14,7 +14,7 @@ export class CloudinaryWidgetManager {
   subject = new Subject();
   constructor(@Inject(ProviderNames.CLOUDINARY_WIDGET) private config: IOption) {
   }
-  get asObserable(): Observable<any> {
+  getAsObserable(): Observable<any> {
     return this.subject.asObservable();
   }
 
@@ -40,7 +40,7 @@ export class CloudinaryWidgetManager {
       this.widget.update(config);
     }
     this.widget.open();
-    return this.asObserable;
+    return this.getAsObserable();
   }
 
   open(option: Partial<IOption>): Observable<any> {
